@@ -394,7 +394,7 @@ const HTMLRenderer: React.FC<HTMLRendererProps> = ({
   const webviewSrc = useMemo(() => {
     // 如果有相对资源且已内联完成，优先使用包含内联资源的 HTML，避免 file:// 跨域和沙箱限制
     // If relative resources exist and inlining is ready, prefer inlined HTML to bypass file:// cross-origin and sandbox restrictions
-    let html = (hasRelativeResources && inlinedHtmlContent) ? inlinedHtmlContent : htmlContent;
+    let html = hasRelativeResources && inlinedHtmlContent ? inlinedHtmlContent : htmlContent;
 
     // 如果有文件路径且内容未被编辑且无相对资源，直接用 file:// URL 加载，保留正常 file:// origin 和 Web Storage
     // If file path exists, content is clean, and there are no relative resources, load directly via file://

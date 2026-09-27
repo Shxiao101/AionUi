@@ -199,10 +199,7 @@ describe('HTMLRenderer', () => {
       .mockResolvedValue('data:image/png;base64,mockImageContent');
 
     const { container } = render(
-      <HTMLRenderer
-        content='<div><img src="./test-image.png" alt="test" /></div>'
-        file_path='/workspace/test.html'
-      />
+      <HTMLRenderer content='<div><img src="./test-image.png" alt="test" /></div>' file_path='/workspace/test.html' />
     );
 
     await waitFor(() => {
